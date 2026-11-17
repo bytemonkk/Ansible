@@ -1,0 +1,26 @@
+
+# SSH private and public keys
+ansible_key
+ansible_key.pub
+*.pem
+*.ppk
+
+# SSH keys and credentials
+.ssh/
+authorized_keys
+
+# Environment files
+.env
+.env.*
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Ansible temporary files
+.retry
+*.retry
+
+# IDE files
+.vscode/
+.idea/
