@@ -1,0 +1,20 @@
+---
+- name: Install BusyBox on Client 1
+  hosts: webservers
+  become: true
+
+  tasks:
+    - name: Install BusyBox
+      ansible.builtin.apt:
+        name: busybox
+        state: present
+        update_cache: true
+
+    - name: Verify BusyBox installation
+      ansible.builtin.command: busybox
+      register: busybox_result
+      changed_when: false
+
+    - name: Display BusyBox verification
+      ansible.builtin.debug:
+        var: busybox_result.stdout
